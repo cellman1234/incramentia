@@ -1,0 +1,270 @@
+@-webkit-keyframes daynight {
+    0% {background: lightblue;}
+    25% {background: cyan}
+    35% {background: darkblue}
+    50% {background: black;}
+    63% {background: darkblue;}
+    75% {background: cyan}
+    100% {background: lightblue}
+} 
+body {
+ -webkit-animation: daynight 1600s infinite;
+}
+a {
+ text-decoration: underline;
+ color: white;
+}
+p {
+ color: white;
+}
+#crafting img:hover {
+ -ms-transform: matrix(0.866,0.5,-0.5,0.866,0,0); /* IE 9 */
+    -webkit-transform: matrix(0.866,0.5,-0.5,0.866,0,0); /* Chrome, Safari, Opera */
+    transform: matrix(0.5,0.5,-0.5,0.866,0,0);
+}
+button {
+ margin: 2;
+ border-radius:10px;
+}
+ul {
+ border: 2px solid silver;
+ color: silver;
+}
+h2 {
+ color: white;
+}
+h3 {
+ color: purple;
+}
+h1 {
+ text-align: center;
+}
+table {
+ float: right;
+ position: fixed;
+ right: 0;
+ cursor: help;
+ border-radius:7px;
+}
+.reset {
+ background: red; 
+ border: 2px black;
+}
+.wood {
+   background-color: brown;
+   border: 2px black;
+}
+.stone {
+ background-color: gray;
+ border: 1px black;
+}
+.soil {
+ background: gold; 
+ border: 2px yellow;
+ border-radius: 10px;
+}
+.directions {
+    width: 400;
+    background: Black;
+    color: silver;
+    border: 2px black;
+    border-radius: 10px;
+}
+.fight {
+ background: red;
+ color: silver;
+ border: 2px black;
+}
+
+.ability {
+    background: purple;
+    color: gold;
+    border: 2px black;
+}
+.mine {
+    background: black;
+    color: white;
+    border: 2px black;
+}
+#invheader, #craftheader, #crafting, #abilityheader, #menuheader, button {
+ cursor: pointer;
+}
+#invspace {
+width: 205;
+height: 17;
+background: red;
+color: red;
+}
+#woodinv {
+ color: brown;   
+}
+#stoneinv {
+ color: gray;
+}
+#emeraldinv {
+ color: black;
+}
+#rubyinv {
+ color: red;
+}
+#diamondinv {
+ color: blue;
+}
+#sandinv {
+ color: gold;   
+}
+#fireinv {
+    color: orange;
+}
+#fightinv {
+ color: red;
+}
+#magic {
+    color: purple;
+}
+#HP {
+ color: red;   
+}
+#boss {
+ width: 150   
+}
+div.nav{
+    position: relative;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    color: gray;
+}
+
+div.nav input{
+    display: none;
+}
+
+
+div.nav label.mainlabel, div.nav div.menuflip{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; /* transition speed etc */
+}
+
+
+div.nav label.mainlabel{ /* menu anchor text style */
+    width: 200px; /* width of anchor text */
+    font: bold 20px Tahoma;
+    position: relative;
+    top: 0;
+    display: block;
+    padding-left: 34px; /* add left padding to make room for icon */
+    cursor: pointer;
+}
+
+div.nav label.mainlabel:before{ /* menu anchor icon */
+    white-space: pre;
+    content: ' Site Info';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 25px;
+    border:7px solid Purple;
+    -webkit-box-shadow: inset 0 0 2px gray, 0 0 5px gray;
+    box-shadow: inset 0 0 2px gray, 0 0 5px gray;
+    border-radius: 30px;
+}
+
+
+div.nav div.menuflip{ /* Site info box */
+    position: absolute;
+    margin: 0;
+    top: 0;
+    padding: 4px;
+    background: white;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    width: 350px;
+    height: 355px;
+    border: 1px solid gray;
+    -webkit-box-shadow: 2px 2px 15px #B5B5B5;
+    box-shadow: 2px 2px 15px #B5B5B5;
+    border-radius: 10px;
+    background: Black;
+}
+
+
+div.nav div.menuflip h4{
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: 20px;
+    padding: 4px 0 0 6px;
+}
+
+
+div.nav div.menuflip ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.nav div.menuflip ul li{
+    border-bottom: 1px inset gray;
+}
+
+div.nav div.menuflip ul li:last-of-type{
+    border-bottom: none;
+}
+
+div.nav div.menuflip ul li:hover{
+    border-bottom-color: transparent;
+}
+
+
+div.nav div.menuflip ul li a{
+    display: block;
+    color: blue;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 10px 0 10px;
+    -webkit-transition: none;
+    transition: none;
+}
+h6 {
+    color: black;
+}
+
+div.nav div.menuflip ul li a:hover{
+    background: #515151;
+    color: white;
+}
+
+
+div.nav div.menuflip label.close{ /* close button */
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    padding-top: 1px;
+    display: inline-block;
+    text-align: center;
+    line-height: 14px;
+    color: white;
+    z-index: 1000;
+    cursor: pointer;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 5px gray;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+}
+
+div.nav input:checked ~ label.mainlabel{
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+div.nav input:checked ~ div.menuflip{
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+}

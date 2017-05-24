@@ -1,0 +1,315 @@
+<html>
+<head>
+	<link rel='stylesheet' href='style.css'/>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<script src='script.js'></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+<script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+<script type="text/javascript">
+	FreshWidget.init("", {"queryString": "&widgetType=popup", "utf8": "✓", "widgetType": "popup", "buttonType": "text", "buttonText": "Feedback", "buttonColor": "white", "buttonBg": "#006063", "alignment": "3", "offset": "235px", "formHeight": "500px", "url": "https://incramentiainc.freshdesk.com"} );
+</script>
+</script>
+    <script> 
+    $(document).ready(function(){
+        window.setInterval(function() {
+        $('#invspace').progressbar({
+          value: space-stuff
+        })
+        }, 1)
+        $('#crafting').hide();
+        $('#abilities').hide()
+        $('#menu').hide()
+    $("#invheader").click(function(){
+        $("#inv").slideToggle();
+      });
+      $("#gemheader").click(function(){
+        $("#shinyinv").slideToggle("slow");
+      });
+      $("#craftheader").click(function(){
+        $("#crafting").slideToggle("slow");
+      });
+      $("#abilityheader").click(function(){
+        $("#abilities").slideToggle("slow");
+      });
+      $("#menuheader").click(function(){
+        $("#menu").slideToggle("slow");
+      });
+      $("#mainheader").click(function(){
+        $("#maininv").slideToggle("slow");
+      });
+    });
+    </script> <!--initializing-->
+  <title>«INCRAMENTIA»</title>
+<body onload="dayNight()">
+<center><a href="http://www.codecademy.com/cellman1234/codebits/N4evfu/"><img id="boss" src="https://s3.amazonaws.com/designmantic-logos/logos/2015/Feb/small-3320-3408732.png"></a><br>
+
+  <a href="https://sites.google.com/a/d101.org/incramentia-wiki/"></a></center><br>
+
+<div id = "gather"> 
+<button class="wood" onclick="getWood()">Chop Wood</button>
+<button class="stone" onclick=getStone()>Mine</button>
+
+<button class="soil" onclick="dig()">Dig</button>
+<button class="fight" onclick="attack()">Fight monsters!</button>
+<button class="wood" onclick="chest()">Make Chest</button>
+<p id='log'></p>
+ </div> <!--gathering-->
+<table border="1" style="background-color: silver">
+<tr onclick="alert('This is your HP.  If you run out, you die.')">
+<td><h3 id="HP">100 HP</h3></td>
+</tr>
+<tr onclick="alert('This is your level and XP.  You get it by doing things, and spend it on abilities and special items.')">
+<td><h3 id="level">LVL 1: 0XP</h3></td>
+</tr>
+<tr onclick="alert('This is how much wood you get per chop.')">
+<td><h3 id="woodinfo">Axe quality: 1</h3></td>
+</tr>
+<tr onclick="alert('This is how much stone, ore gems and coal you get per swing.')">
+<td><h3 id="stoneinfo">Pick quaity: .5</h3></td>
+</tr>
+<td><h3 id="fightinfo">Sword quality: 1</h3>
+</td>
+</tr>
+<tr onclick="alert('This is how many Chests you have.')">
+<td><h3 id="chestinfo">Chest #: 0</h3>
+ <tr onclick="start()">
+<td><h3 id="timeinfo">Time:</h3>
+  <tr onclick="start()">
+</table>
+<h2 id="invheader"> Toggle Inventory:</h2>
+<div id="inv">
+<h2 id="invspace" alt="Space left"></h2>
+<h3 id="mainheader">Main Items</h3>
+<div id="maininv">
+<p id='woodinv'>-</p>
+<p id='stoneinv'>-</p>
+<p id='sandinv'>-</p>
+<p id='fightinv'>-</p>
+</div>
+<h3 id="gemheader">Gems/Metals</h3>
+<div id="shinyinv">
+<p id ='geminv' style="color: cyan">-</p>
+<p id='metalinv' style="color: silver">-</p>
+<p id='lightinv' style="color: yellow">-</p>
+<p id='magic'>-Basic Pyrostaff</p>
+</div>
+ </div> <!--inventory-->
+<h2 id="craftheader">Toggle Crafting:</h2>
+<div id="crafting">
+    
+    <p><!--pagebreak--></p>
+    <div>
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/2/21/Copper_Axe.png?version=dec594c6f9a12ba7cc9f942c56a94dfe" onclick="woodAxe()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/8/81/Iron_Axe.png?version=40e60f8d348a5c28054a07db37725cf6" onclick="stoneAxe()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/8/83/Silver_Axe.png?version=ea1a05a1bf52fa4f0e1ec6c596b40427" onclick="ironAxe()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/2/29/Gold_Axe.png?version=d43949f99da5905a9393252510611534" onclick="goldAxe()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/d/d8/Molten_Hamaxe.png" onclick="fireAxe()">
+</div> <!--axes-->
+    <p><!--pagebreak--></p>
+    <div> 
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/d/d7/Copper_Pickaxe.png?version=1044443969ad4afdfd332ad875973b07" onclick="woodPick()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/a/a2/Iron_Pickaxe.png?version=402787301fb27cbe1db23ec48aedfab6" onclick="stonePick()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/9/94/Silver_Pickaxe.png?version=6f5a62754e98fa9670f4860f4dc9288d" onclick="ironPick()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/d/d3/Gold_Pickaxe.png?version=f6a94eee70aff15e1fdf24489bf54f7d" onclick="goldPick()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/d/d0/Molten_Pickaxe.png" onclick="firePick()">
+</div> <!--picks-->
+    <p><!--pagebreak--></p>
+    <div> 
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/8/8b/Copper_Shortsword.png?version=a64cedb4cbecc9829533112c8433da42" onclick="woodSword()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/c/cf/Iron_Broadsword.png?version=6cf241e1b2dba065a7690659957c7099" onclick="stoneSword()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/c/cb/Silver_Broadsword.png?version=64d063b2521ece12b35f7e98c53ed141" onclick="ironSword()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/1/11/Gold_Broadsword.png?version=caaf4363f83bd310717834aef8ac0db9" onclick="goldSword()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/e/e5/Fiery_Greatsword.png" onclick="FireSword()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/f/fa/Excalibur.png?version=fabe959d48b3b4ccef74fd18f91e6b9d" onclick="SunSword()">
+</div> <!--swords-->
+    <p><!--pagebreak--></p>
+    <div>
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/a/a2/Iron_Chainmail.png?version=fd9eaf0e8f98c94ddf59860fcaa7b013" onclick="ironArmor()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/5/55/Gold_Chainmail.png?version=fbca04819db5af07bffa616cad435705" onclick="goldArmor()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/f/f3/Jungle_Shirt.png?version=67448039328f3e20d30529560eb6cc88" onclick="camoArmor()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/archive/3/35/20110615163718%21Molten_Breastplate.png" onclick="fireArmor()">
+
+    </div> <!--armor-->
+    <p><!--pagebreak--></p>
+    <div>
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/6/6c/Iron_Bar.png?version=943fdf06e8e7c78651ba2901ff867bf6" onclick="IronOre()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/4/4e/Gold_Bar.png?version=b4954ab089459c965f5f7d92c8729741" onclick="GoldOre()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/c/ce/Crimtane_Bar.png" onclick="FireOre()">
+      <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/2/2e/Orichalcum_Bar.png?version=e7ec36b97623f44f9748a5e99b0ad331" onclick="MagicOre()">
+      <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/a/a4/Cobalt_Bar.png?version=e8984e1cfd57734a33b97f8f96c496fd" onclick="techOre">
+</div> <!--ore-->
+<p><!--pagebreak--></p>
+<div>
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/6/6a/Emerald.png" onclick="PolishedEmerald()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/e/ea/Diamond.png" onclick="PolishedDiamond()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/a/a9/Ruby.png" onclick="PolishedRuby()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/f/f7/Sapphire.png" onclick="PolishedSapphire()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/a/a5/Topaz.png" onclick="PolishedTopaz()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/2/2e/Amethyst.png" onclick="PolishedAmethyst()">
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/0/01/Amber.png" onclick="PolishedAmber()">
+ 
+</div> <!--gems-->
+<p><!--pagebreak--></p>
+    <div>
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/8/87/Iron_Ore.png" onclick="IronDust()">
+    
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/f/f7/Gold_Ore.png" onclick="GoldDust()">
+    
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/3/34/Titanium_Ore.png" onclick="CoalDust()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/4/43/Orichalcum_Ore.png" onclick="MagicDust()">
+<p><!--pagebreak--></p>
+    </div><!--powders-->
+    <div>
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/2/2c/Bone.png" onclick="MagicBones()">
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/3/3b/Emerald_Staff.png" onclick="EmraldStaff()">
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/5/55/Sapphire_Staff.png" onclick="DiamondStaff()">
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/c/c3/Ruby_Staff.png" onclick="RubyStaff()">
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/d/d9/Cobalt_Ore.png?version=48b2e8dce93df7afc503483c70f875fe" onclick="SpecterTop()">
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/e/e8/Spectre_Staff.png?version=32a4c81da6d0535eedd910e341ba07d9" onclick="SpecterStaff()">
+
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/d/df/Zapinator.png" onclick="Zapinator()">
+
+        <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/1/1d/Magic_Mirror.png" onclick="Light()">
+    </div><!--magic-->
+  <div><!--potions-->
+    <img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/7/77/Flask_of_Fire.png" onclick="strength_potion()">
+<img src="http://hydra-media.cursecdn.com/terraria.gamepedia.com/9/9f/Flask_of_Party.png" onclick="effciency_potion()">
+  </div>
+ </div> <!--crafting-->
+<h2 id="abilityheader">Toggle Abilities:</h2>
+<div id="abilities">
+<button class="ability" onclick="treeScorch()">TreeScorch</button>
+<button class="ability">RockScar</button>
+<button class="ability" onclick="heal()">Heal</button>
+<button class="ability" onclick="chooseClass()">Choose your Class</button>
+<button class="mine"  onclick="mineDwarf()">Get 1 dwarf</button>
+
+ </div> <!--abilities-->
+<h2 id="menuheader">Toggle Menu:</h2>
+<div id="menu">
+<ul>
+<li><strong>V0.6: let there be light</strong> A single button that writes some text!  Actually pretty proud...</li>
+<li><strong>V1.0: choppin' wood</strong> You guessed it-humans are now capable of swinging hatchets to dismantle trees!!!</li>
+<li><strong>V1.3: pick your axe</strong> Added pickaxes and upgrades to the axes.</li>
+<li><strong>V1.5: upgrade get!</strong> I hope you like your pickaxes stronger than before!</li>
+<li><strong>V2.0: MASS UPDATE!</strong> You can now level up, and get (wait for it) stone axes!  You can also get straight to the top of the page from the bottom of the page:  Who knows, it might be foreshadowing teleportation!</li>
+<li><strong>V2.3: how ironic</strong> Iron tools are added - which is strange, since the buttons for them were there a long time ago.</li>
+<li><strong>V2.5: Theory of Functionativity</strong> Game dynamics are now much better, and the game should run smoother.</li>
+<li><strong>V2.6: gold tools</strong> gold tools are added.</li>
+<li><strong>V2.7: Dwarfs</strong> Dwarfs are added.</li>
+<li><strong>V2.8: MASS UPDATE!</strong> Staffs, magic bones, light, mirors, ores, furnaces, powders, new tools/weapons,new subdevisions.</li>
+<li><strong>V3.0: MASS UPDATE!</strong>New gems, improved game dynamics, Round buttons, toggle inventory, crafting, abilities, and menu.</li>
+</ul>
+</div><!--menu-->
+<label class="toggler blue" for="checkbox5"></label>
+<div class="nav">
+<input type="checkbox" id="togglebox" />
+<label for="togglebox" class="mainlabel" id="mainlabel_ie"></label>
+<div class="menuflip" id="menuflip_ie">
+<ul>
+<li><a href="http://www.codecademy.com/cellman1234">Home</a></li>
+</ul>
+<label for="togglebox" class="close">x</label>
+<div style="position:relative;left:0px;top:0px">
+<span id="highlighter" style="position:absolute;left:0;top:0;font-size:18px;font-family:Verdana;background-color:yellow;clip:rect(0px 0px auto 0px)"></span>
+</div>
+<button onclick="resetall()" class="reset">Reset?</button>
+<div id="wiki">
+<h6>
+<a style="text-decoration: none"href="https://sites.google.com/a/d101.org/incramentia-wiki/home">The wiki</a>
+<p><a style="text-decoration: none" href="www.codecademy.com/cellman1234">My Homepage</a></p>
+<p><a style="text-decoration: none"href="#">BACK TO TOP</a></p>
+<p>©2015 Seth Traman &amp; Nate Goldsborough and  ALL RIGHTS RESERVED</p>
+<p>Images taken from the Teraria Wiki.</p>
+<p>---------------------------------------------------------------------------------------</p>
+<a target="_blank" href="http://www.copyrighted.com/copyrights/view/ojfc-ozw6-0os6-dj2l"><img border="0" alt="Copyrighted.com Registered &amp; Protected 
+MEEA-KRM3-GOA7-7H2E" title="Copyrighted.com Registered &amp; Protected 
+MEEA-KRM3-GOA7-7H2E" width="150" height="40" src="http://static.copyrighted.com/images/seal.gif"/></a>
+  <br>
+  <audio controls loop autoplay style="width:40px" src="https://learn.shayhowe.com.s3-website-us-east-1.amazonaws.com/assets/misc/courses/html-css/adding-media/jazz.ogg"></audio>
+  <br>
+<button onclick="SetHi()" class="hi">Set name</button>
+<button onclick="Hi()" class="hi">Make me say Hi</button>
+<script>
+var tickercontents=new Array()
+tickercontents[0]='Ths is Incramentia.'
+tickercontents[1]='Created By Seth and Nate.'
+tickercontents[2]='An adventure began,'
+tickercontents[3]='And a game was born.'
+tickercontents[4]='Try for yourself...'
+tickercontents[5]='...or die trying!'
+tickercontents[6]='your goal is to get 100 million XP.'
+tickercontents[7]='The wiki is at https://goo.gl/IxgzAQ'
+tickercontents[8]='Good Luck!'
+var tickdelay=3000 
+var highlightspeed=5
+var currentmessage=0
+var clipwidth=0
+function changetickercontent(){
+crosstick.style.clip="rect(0px 0px auto 0px)"
+crosstick.innerHTML=tickercontents[currentmessage]
+highlightmsg()
+}
+function highlightmsg(){
+var msgwidth=crosstick.offsetWidth
+if (clipwidth<msgwidth){
+clipwidth+=highlightspeed
+crosstick.style.clip="rect(0px "+clipwidth+"px auto 0px)"
+beginclip=setTimeout("highlightmsg()",20)
+}
+else{
+clipwidth=0
+clearTimeout(beginclip)
+if (currentmessage==tickercontents.length-1) currentmessage=0
+else currentmessage++
+setTimeout("changetickercontent()",tickdelay)
+}
+}
+function start_ticking(){
+crosstick=document.getElementById? document.getElementById("highlighter") : document.all.highlighter
+crosstickParent=crosstick.parentNode? crosstick.parentNode : crosstick.parentElement
+if (parseInt(crosstick.offsetHeight)>0)
+crosstickParent.style.height=crosstick.offsetHeight+'px'
+else
+setTimeout("crosstickParent.style.height=crosstick.offsetHeight+'px'",100)
+changetickercontent()
+}
+if (document.all || document.getElementById)
+window.onload=start_ticking
+</script>
+<!-- Start of StatCounter Code for Default Guide -->
+
+<script type="text/javascript">
+
+var sc_project=10325620;
+
+var sc_invisible=0;
+
+var sc_security="13e2fd8a";
+
+var scJsHost = (("https:" == document.location.protocol) ?
+
+"https://secure." : "http://www.");
+
+document.write("<sc"+"ript type='text/javascript' src='" +
+
+scJsHost+
+
+"statcounter.com/counter/counter.js'></"+"script>");
+
+</script>
+
+<noscript><div class="statcounter"><a title="free hit
+
+counter" href="http://statcounter.com/free-hit-counter/"
+
+target="_blank"><img class="statcounter"
+
+src="http://c.statcounter.com/10325620/0/13e2fd8a/0/"
+
+alt="free hit counter"></a></div></noscript>
+
+<!-- End of StatCounter Code for Default Guide -->
+  
